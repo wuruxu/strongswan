@@ -35,7 +35,7 @@ iptables -A INPUT -p udp --dport 4500 --j ACCEPT -j SNAT --to-source <vps_eth0_I
 
 ##Android setup
 * download [strongswan](https://play.google.com/store/apps/details?id=org.strongswan.android)
-* import $(IP).client.cert.p12
+* import $(CID).client.cert.p12
 * New profile for VPN
 ```
 Gateway:  VPS_IP
