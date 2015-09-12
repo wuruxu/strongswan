@@ -13,6 +13,10 @@ tools and script for deploy strongswan iKev2/IPsec
 * make cert
 * make conf
 * make install
+* ipsec service start
+```
+ipsec start
+```
 
 ## VPS config
 * update /etc/sysctl.conf, then 'sysctl -p'
@@ -27,4 +31,15 @@ iptables -A INPUT -p udp --dport 500 --j ACCEPT
 iptables -A INPUT -p udp --dport 4500 --j ACCEPT
 iptables -A INPUT -p udp --dport 4500 --j ACCEPT
 iptables -A INPUT -p udp --dport 4500 --j ACCEPT -j SNAT --to-source <vps_eth0_IP>
+```
+
+##Android setup
+* download [strongswan](https://play.google.com/store/apps/details?id=org.strongswan.android)
+* import $(IP).client.cert.p12
+* New profile for VPN
+```
+Gateway:  VPS_IP
+Type: IKEv2 Certificate
+User certificate: 选择刚才导入的证书
+CA certificate: 取消自动选择，选择刚才导入的证书
 ```
