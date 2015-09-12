@@ -1,5 +1,5 @@
 IP=139.162.8.202
-CID=win7
+CID=android
 
 client:
 	ipsec pki --pub --in certs/client.pem | ipsec pki --issue --cacert certs/ca.cert.pem --cakey certs/ca.pem --dn "C=CN, O=strongxyz, CN=$(CID)" --outform pem > $(CID).client.cert.pem
