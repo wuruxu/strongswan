@@ -29,8 +29,8 @@ net.ipv4.conf.all.send_redirects = 0
 ```
 iptables -A INPUT -p udp --dport 500 --j ACCEPT
 iptables -A INPUT -p udp --dport 4500 --j ACCEPT
-iptables -A INPUT -p udp --dport 4500 --j ACCEPT
-iptables -A INPUT -p udp --dport 4500 --j ACCEPT -j SNAT --to-source <vps_eth0_IP>
+iptables -A INPUT -p esp -j ACCEPT
+iptables -t nat -A POSTROUTING -o eth0 ! -p esp -j SNAT --to-source <vps_eth0_IP>
 ```
 
 ##Android setup
