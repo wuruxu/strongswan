@@ -21,13 +21,13 @@ conn strongswan\n\
   ike=aes256ccm128-sha256-modp2048,aes256gcm128-sha256-modp2048,aes256gcm96-sha384-modp2048,aes256ccm96-sha384-modp2048,aes256-sha256-modp2048,aes128-sha256-modp2048,aes128-sha1-modp2048!\n\
   esp=chacha20poly1305,aes128gcm128-aes256gcm128,aes256ccm128-sha256-modp2048,aes256gcm128-sha256-modp2048,aes256gcm96-sha384-modp2048,aes256ccm96-sha512-modp2048,aes256-sha256,aes128-sha1-modp2048!\n\
   auto=add\n\
-  
-conn local-net
-  leftsubnet=192.168.108.0/24
-  rightsubnet=192.168.108.0/24
-  authby=never
-  type=pass
-  auto=route
+\n\
+conn local-net\n\
+  leftsubnet=192.168.108.0/24\n\
+  rightsubnet=192.168.108.0/24\n\
+  authby=never\n\
+  type=pass\n\
+  auto=route\n\
 ";
 
 int main(int argc, char *argv[]) {
