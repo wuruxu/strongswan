@@ -35,9 +35,7 @@ iptables -t nat -A POSTROUTING -o eth0 ! -p esp -j SNAT --to-source <vps_eth0_IP
 * update iptables rules for linode (10.8.0.0/24 or 10.7.0.0/24 is rightsourceip in /etc/ipsec.conf)
 ```
 iptables -t nat -A POSTROUTING -s 10.7.0.0/24 -o eth0 -j MASQUERADE
-iptables -A FORWARD -s 10.7.0.0/24 -j ACCEPT
 iptables -t nat -A POSTROUTING -s 10.8.0.0/24 -o eth0 -j MASQUERADE
-iptables -A FORWARD -s 10.8.0.0/24 -j ACCEPT
 ```
 ##Android setup
 * download [strongswan](https://play.google.com/store/apps/details?id=org.strongswan.android)
